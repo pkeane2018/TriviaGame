@@ -22,15 +22,27 @@
 #title {
  font-family: Georgia, 'Times New Roman', Times, serif;
  position: relative;
+ left: 30%;
  top: 5%;
  font-size: 30px;
 }
 
 #tr {
+    position: relative;
+    top: 10%;
+    left: 37%;
     float: left;
 }
 
 #time {
+    position: relative;
+    top: 10%;
+    left: 37%;
     float: left;
 }
 
+.question {
+    clear: both;
+    position: relative;
+    left: 42%;
+}
