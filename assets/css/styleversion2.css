@@ -8,8 +8,8 @@
 #amy {
     position: absolute;
     left: 16.67%;
-    top: 10%;
-    height: 80%;
+    top: 5%;
+    height: 90%;
     background-color: #b3ffff;
 }
 
@@ -42,7 +42,46 @@
 }
 
 .question {
-    clear: both;
     position: relative;
-    left: 42%;
+    left: 27%;
+}
+
+.option {
+    float: left;
+}
+
+#optionbox1 {
+    position: relative;
+    left: 17%;
+}
+
+#optionbox2 {
+    position: relative;
+    left: 17%;
+}
+
+#optionbox3 {
+    position: relative;
+    left: 30%;
+}
+
+#q3 {
+    position: relative;
+    left: 23%;
+}
+
+#optionbox4 {
+    position: relative;
+    left: 40%;
+
+}
+
+#q4 {
+    position: relative;
+    left: 17%;
+}
+
+#optionbox5 {
+    position: relative;
+    left: 34%;
 }
