@@ -260,43 +260,24 @@ window.onload = function game () {
     if (clock.time >= 0 && timeup == false) {
 
     var a1chosen = false;
-     var a2chosen = false;
-     var a3chosen = false;
-     var a4chosen = false;
-     var a5chosen = false;
-
+     
      var correctcount = 0;
      var wrongcount = 0;
      
+     var wrong;
+     var correct;
+
 
 if (a1chosen == false) {
   
-  $(".q1option1").on("click", choose() );
-  alchosen = choose("#option1");
-  console.log(a1chosen);
-  wrongcount += wrong;
-  correctcount += correct;
-  console.log(wrongcount);
-  console.log(correctcount);
-}
-
-if (a2chosen == false) {
+  $(".q1option1").on("click", function() {
   
-  $(".q2option").on("click", choose() );
-  alchosen = choose(".q2option");
-  wrongcount += wrong;
-  correctcount += correct;
-}
-
-var wrong;
-var correct;
-
-function choose() {
   correct = 0;
   wrong = 0;
   console.log($(this).val());
   answer = $(this).val();
   console.log(answer);
+
   if (answer = "wrong") {
     wrong = 1;
     console.log(wrong)
@@ -305,19 +286,26 @@ function choose() {
     correct = 1;
     console.log(correct);
   }
-  return true;
+  
+  a1chosen = true;
+  console.log(a1chosen);
+  wrongcount += wrong;
+  correctcount += correct;
+  console.log(wrongcount);
+  console.log(correctcount);
     
-      }
+      })
 
     }
 
-  else if (clock.time < 0) {
+}
+
+else if (clock.time < 0) {
 
     return timeup = true;
 
     }
-   
-  }
+}
 
   trivia();
 

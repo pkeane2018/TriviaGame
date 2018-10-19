@@ -27,7 +27,7 @@ window.onload = function game () {
       $(q1option1).attr('class','form-check');
       $(q1option1).attr('class','form-check-inline');
       $(q1option1).attr('id' ,'option1');
-      $(q1option1).html( "<input class='form-check-input q1option' type='radio' name='inlineRadioOptions' id='inlineRadio1' value='wrong'></input>");
+      $(q1option1).html( "<input class='form-check-input q1option' type='radio' name='inlineRadioOptions' id= 'spongebob' value='wrong'></input>");
       $(q1option1).append("<label class='form-check-label' for='inlineRadio1'>Barack Obama</label>");
       $(optionbox1).append(q1option1);
       
@@ -214,110 +214,56 @@ window.onload = function game () {
       $("#amy").append(optionbox5);
       $("#amy").append("<br>")
 
-      function trivia() {
+    
+    function trivia() {
 
-      var timeup = false;
-
-      console.log(timeup);
-     
-      var countdown;
-
-      var clock = {
-  
-      time : 60,
-  
-      Converter: function(t) {
-  
-          var minutes = Math.floor(t / 60);
-          var seconds = t - (minutes * 60);
-      
-          if (seconds < 10) {
-            seconds = "0" + seconds;
-          }
-      
-          if (minutes === 0) {
-            minutes = "00";
-          }
-          else if (minutes < 10) {
-            minutes = "0" + minutes;
-          }
-      
-          return minutes + ":" + seconds;
-        },
-  
-      count: function() {
-      
-          clock.time--;
-          console.log(clock.time);
-          var converted = clock.Converter(clock.time);
-          $("#time").text(converted);
-      }
-     
-     }
-  
-      countdown = setInterval(clock.count, 1000);
-
-    if (clock.time >= 0 && timeup == false) {
+    console.log("trivia function started")
 
     var a1chosen = false;
-     var a2chosen = false;
-     var a3chosen = false;
-     var a4chosen = false;
-     var a5chosen = false;
+    console.log(a1chosen);
 
      var correctcount = 0;
      var wrongcount = 0;
      
+     var wrong;
+     var correct;
 
-if (a1chosen == false) {
-  
-  $(".q1option1").on("click", choose() );
-  alchosen = choose("#option1");
-  console.log(a1chosen);
-  wrongcount += wrong;
-  correctcount += correct;
-  console.log(wrongcount);
-  console.log(correctcount);
-}
 
-if (a2chosen == false) {
-  
-  $(".q2option").on("click", choose() );
-  alchosen = choose(".q2option");
-  wrongcount += wrong;
-  correctcount += correct;
-}
-
-var wrong;
-var correct;
-
-function choose() {
-  correct = 0;
-  wrong = 0;
-  console.log($(this).val());
-  answer = $(this).val();
-  console.log(answer);
-  if (answer = "wrong") {
-    wrong = 1;
-    console.log(wrong)
-}
-  else if (answer = "correct") {
-    correct = 1;
-    console.log(correct);
-  }
-  return true;
-    
-      }
-
-    }
-
-  else if (clock.time < 0) {
-
-    return timeup = true;
-
-    }
+$(".q1option").on("click", function() {
    
-  }
+    if (document.getElementById("spongebob").checked == true) {
+  
+        correct = 0;
+        wrong = 0;
+        console.log(correct);
+        console.log(wrong);
+        console.log($(this).val());
+        answer = $(this).val();
+        console.log(answer);
+      
+        if (answer == "wrong") {
+          wrong = 1;
+          console.log("The answer was wrong");
+          console.log(wrong)
+      }
+        else if (answer == "correct") {
+          correct = 1;
+          console.log("The answer was correct");
+          console.log(correct);
+        }
+        
+
+        wrongcount += wrong;
+        correctcount += correct;
+        console.log(wrongcount);
+        console.log(correctcount);
+          
+            }
+
+})
+  
+
+}
 
   trivia();
 
