@@ -19,6 +19,37 @@
     left: 40%;
     }
 
+#gameover {
+    position: relative;
+    left: 42%;
+    font-size: 18px;
+    }
+    
+    #correctans {
+        float: left;
+        position: relative;
+        left: 40%;
+    }
+    
+    #correctnum {
+        float: left;
+        position: relative;
+        left: 40%;
+    }
+    
+    #incorrectans {
+        clear: both;
+        float: left;
+        position: relative;
+        left: 40%;
+    }
+    
+    #incorrectnum {
+        float: left;
+        position: relative;
+        left: 40%;
+    }
+
 #title {
  font-family: Georgia, 'Times New Roman', Times, serif;
  position: relative;
@@ -86,33 +117,3 @@
     left: 34%;
 }
 
-#gameover {
-    position: relative;
-    left: 40%;
-    font-size: 18px;
-}
-
-#correctans {
-    float: left;
-    position: relative;
-    left: 35%;
-}
-
-#correctnum {
-    float: left;
-    position: relative;
-    left: 35%;
-}
-
-#incorrectans {
-    clear: both;
-    float: left;
-    position: relative;
-    left: 35%;
-}
-
-#incorrectnum {
-    float: left;
-    position: relative;
-    left: 35%;
-}
