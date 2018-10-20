@@ -1,0 +1,36 @@
+#steve {
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/flag.jpg");
+    position: relative;
+}
+
+#amy {
+    position: absolute;
+    left: 16.67%;
+    top: 10%;
+    height: 80%;
+    background-color: #b3ffff;
+}
+
+#start {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    }
+
+#title {
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ position: relative;
+ top: 5%;
+ font-size: 30px;
+}
+
+#tr {
+    float: left;
+}
+
+#time {
+    float: left;
+}
+

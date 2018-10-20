@@ -220,19 +220,6 @@ window.onload = function game () {
     var wrongcount = 0;
     var correctcount = 0;
     var uacount = 0;
-
-    var a1blank = 0;
-    var a2blank = 0;
-    var a3blank = 0;
-    var a4blank = 0;
-    var a5blank = 0;
-
-
-    var a1answered = false;
-    var a2answered = false;
-    var a3answered = false;
-    var a4answered = false;
-    var a5answered = false;
   
       var timeup = false;
 
@@ -272,126 +259,43 @@ window.onload = function game () {
       
         else if (time == 0) {
 
-        clearInterval(countdown);
-        console.log("DONE");
+          clearInterval(countdown);
+          console.log("DONE");
 
-        console.log("How now brown cow");
+         $("#tr").hide();
+         $("#time").hide();
+         $(".question").hide();
+         $("#optionbox1").hide();
+         $("#optionbox2").hide();
+         $("#optionbox3").hide();
+         $("#optionbox4").hide();
+         $("#optionbox5").hide();
+         $(".form-check-inline").hide();
+         $(".option").hide();
+         $(".form-check-label").hide();
+         $("br").hide();
 
-        var foo = document.getElementsByClassName("q1option");
-                        for (var i = 0; i < foo.length; i++) {
-                            if (foo[i].checked) {
-                            a1answered = true;
-                            console.log("question 1 was answered.")
-                            }
-                        }
-                        console.log(a1answered);
+        console.log("The question page elements are gone.")
+        console.log("There were" + " " + uacount + " " + "unanswered questions");
+        $("#amy").append("<br><br>");
+        var gameover = $("<p>").text("Game over");
+        $(gameover).attr('id','gameover');
+        $("#amy").append(gameover);
+        $("#amy").append("<br>");
+        var correctans = $("<p>").html("Correct Answers:&nbsp;");
+        $(correctans).attr('id', 'correctans');
+        $("#amy").append(correctans);
+        var correctnum = $("<p>").html(correctcount);
+        $(correctnum).attr('id','correctnum');
+        $("#amy").append(correctnum);
+        $("#amy").append("<br>");
+        var incorrectans = $("<p>").html("Incorrect Answers:&nbsp;");
+        $(incorrectans).attr('id','incorrectans');
+        $("#amy").append(incorrectans);
+        var incorrectnum = $("<p>").html(wrongcount);
+        $(incorrectnum).attr('id','incorrectnum');
+        $("#amy").append(incorrectnum);
 
-                        if (a1answered == false) 
-                            {
-                                a1blank = 1;
-                                console.log("QUESTION 1 NOT ANSWERED")
-                            }
-                    
-        var moo = document.getElementsByClassName("q2option");
-                        for (var i = 0; i < moo.length; i++) {
-                                if (moo[i].checked) {
-                                a2answered = true;
-                                console.log("question 2 was answered.")
-                                }
-                            }
-                            console.log(a2answered);
-    
-                            if (a2answered == false) 
-                                {
-                                    a2blank = 1;
-                                }
-
-        var goo = document.getElementsByClassName("q3option");
-                        for (var i = 0; i < goo.length; i++) {
-                                    if (goo[i].checked) {
-                                    a3answered = true;
-                                    console.log("question 3 was answered.")
-                                    }
-                                }
-                                console.log(a3answered);
-        
-                                if (a3answered == false) 
-                                    {
-                                        a3blank = 1;
-                                    }
-
-        var boo = document.getElementsByClassName("q4option");
-                            for (var i = 0; i < boo.length; i++) {
-                                        if (boo[i].checked) {
-                                        a4answered = true;
-                                        console.log("question 4 was answered.")
-                                        }
-                                    }
-                                    console.log(a4answered);
-            
-                                    if (a4answered == false) 
-                                        {
-                                            a4blank = 1;
-                                        }     
-
-        var hoo = document.getElementsByClassName("q5option");
-                                for (var i = 0; i < hoo.length; i++) {
-                                                    if (hoo[i].checked) {
-                                                    a5answered = true;
-                                                    console.log("question 5 was answered.")
-                                                    }
-                                                }
-                                                console.log(a5answered);
-                        
-                                                if (a5answered == false) 
-                                                    {
-                                                        a5blank = 1;
-                                                        console.log(a5blank);
-                                                    }     
-                    console.log("UNDERPANTS");
-                    uacount += a1blank + a2blank + a3blank + a4blank + a5blank;
-                   
-                console.log("There were" + " " + uacount + " " + "unanswered questions");
-
-                $("#tr").hide();
-                $("#time").hide();
-                $(".question").hide();
-                $("#optionbox1").hide();
-                $("#optionbox2").hide();
-                $("#optionbox3").hide();
-                $("#optionbox4").hide();
-                $("#optionbox5").hide();
-                $(".form-check-inline").hide();
-                $(".option").hide();
-                $(".form-check-label").hide();
-                $("br").hide();
-       
-               console.log("The question page elements are gone.")
-               $("#amy").append("<br><br>");
-               var gameover = $("<p>").text("Game over");
-               $(gameover).attr('id','gameover');
-               $("#amy").append(gameover);
-               $("#amy").append("<br>");
-               var correctans = $("<p>").html("Correct Answers:&nbsp;");
-               $(correctans).attr('id', 'correctans');
-               $("#amy").append(correctans);
-               var correctnum = $("<p>").html(correctcount);
-               $(correctnum).attr('id','correctnum');
-               $("#amy").append(correctnum);
-               $("#amy").append("<br>");
-               var incorrectans = $("<p>").html("Incorrect Answers:&nbsp;");
-               $(incorrectans).attr('id','incorrectans');
-               $("#amy").append(incorrectans);
-               var incorrectnum = $("<p>").html(wrongcount);
-               $(incorrectnum).attr('id','incorrectnum');
-               $("#amy").append(incorrectnum);
-               $("#amy").append("<br>");
-               var unanswered = $("<p>").html("Unanswered Questions:&nbsp;");
-               $(unanswered).attr('id','unanswered');
-               $("#amy").append(unanswered); 
-               var uanum = $("<p>").html(uacount);
-               $(uanum).attr('id', 'uanum');
-               $("#amy").append(uanum);                     
         }  
     }
   
@@ -410,6 +314,19 @@ var answer2;
 var answer3;
 var answer4;
 var answer5;
+
+var a1blank;
+var a2blank;
+var a3blank;
+var a4blank;
+var a5blank;
+
+
+var a1answered = false;
+var a2answered = false;
+var a3answered = false;
+var a4answered = false;
+var a5answered = false;
 
 
 $(".option").on("click", function() {
@@ -742,6 +659,88 @@ $(".option").on("click", function() {
                                           console.log(answer5);
                                 
                                           }
+
+                        console.log("How now brown cow");
+                    
+                        a1blank = 0;
+                        a2blank = 0;
+                        a3blank = 0;
+                        a4blank = 0;
+                        a5blank = 0;
+
+                        var foo = document.getElementsByClassName("q1option");
+                        for (var i = 0; i < foo.length; i++) {
+                            if (foo[i].checked) {
+                            a1answered = true;
+                            console.log("question 1 was answered.")
+                            }
+                        }
+                        console.log(a1answered);
+
+                        if (a1answered == false) 
+                            {
+                                a1blank = 1;
+                                console.log("QUESTION 1 NOT ANSWERED")
+                            }
+                    
+                        var moo = document.getElementsByClassName("q2option");
+                        for (var i = 0; i < moo.length; i++) {
+                                if (moo[i].checked) {
+                                a2answered = true;
+                                console.log("question 2 was answered.")
+                                }
+                            }
+                            console.log(a2answered);
+    
+                            if (a2answered == false) 
+                                {
+                                    a2blank = 1;
+                                }
+
+                        var goo = document.getElementsByClassName("q3option");
+                        for (var i = 0; i < goo.length; i++) {
+                                    if (goo[i].checked) {
+                                    a3answered = true;
+                                    console.log("question 3 was answered.")
+                                    }
+                                }
+                                console.log(a3answered);
+        
+                                if (a3answered == false) 
+                                    {
+                                        a3blank = 1;
+                                    }
+
+                            var boo = document.getElementsByClassName("q4option");
+                            for (var i = 0; i < boo.length; i++) {
+                                        if (boo[i].checked) {
+                                        a4answered = true;
+                                        console.log("question 4 was answered.")
+                                        }
+                                    }
+                                    console.log(a4answered);
+            
+                                    if (a4answered == false) 
+                                        {
+                                            a4blank = 1;
+                                        }     
+
+                                var hoo = document.getElementsByClassName("q5option");
+                                for (var i = 0; i < hoo.length; i++) {
+                                                    if (hoo[i].checked) {
+                                                    a5answered = true;
+                                                    console.log("question 5 was answered.")
+                                                    }
+                                                }
+                                                console.log(a5answered);
+                        
+                                                if (a5answered == false) 
+                                                    {
+                                                        a5blank = 1;
+                                                    }     
+                    console.log("UNDERPANTS");
+                    uacount += a1blank + a2blank + a3blank + a4blank + a5blank;
+                    console.log(uacount);
 
                 })
   
