@@ -251,7 +251,6 @@ window.onload = function game () {
 
         if ( time > 0) {
           time--;
-          console.log(time);
           var converted = Converter(time);
           $("#time").text(converted);
 
@@ -302,11 +301,12 @@ countdown = setInterval(count, 1000);
 
 if (time > 0) {
 
-var a1chosen = false;
+var a1chosen = false;  
 var a2chosen = false;
 var a3chosen = false;
 var a4chosen = false;
 var a5chosen = false;
+var answer1;
 
 $(".option").on("click", function() {
 
@@ -314,29 +314,70 @@ $(".option").on("click", function() {
   
    var wrong;
    var correct;
+   
+   console.log(answer1);
 
-  if ($(this).hasClass("q1option") && a1chosen == false) {
-
-      correct = 0;
-      wrong = 0;
-      answer = $(this).val();
-      a1chosen = true;
+  if ($(this).hasClass("q1option")) {
     
-      if (answer == "wrong") {
+    correct = 0;
+    wrong = 0;
+
+    if (a1chosen == false) { 
+      
+      answer1 = $(this).val();
+      console.log(answer1);
+      a1chosen = true;
+      console.log("an answer has been chosen");
+    
+      if (answer1 == "wrong") {
         wrong = 1;
         console.log("The answer was wrong");
     }
-      else if (answer == "correct") {
+      else if (answer1 == "correct") {
         correct = 1;
         console.log("The answer was correct");
-        console.log(correct);
       }
       
-          
+
+    }
+
+    else if ((a1chosen == true) && answer1 =="correct") {
+
+      console.log(answer1);
+      correctcount--;
+      console.log(correctcount);
+      console.log("made it here")
+
+    }
+
+      else if ((a1chosen == true) && answer1 == "wrong") {
+        console.log(answer1);
+        wrongcount--;
+        console.log(wrongcount);
+        console.log("made it here too");
+      }
+
+      answer1 = $(this).val();
+      console.log(answer1);
+      a1chosen = true;
+    
+      if (answer1 == "wrong") {
+        wrong = 1;
+        console.log("The answer was wrong");
+
+    }
+      else if (answer1 == "correct") {
+        correct = 1;
+        console.log("The answer was correct");
+      }
+
+     
           wrongcount += wrong;
           console.log(wrongcount);
           correctcount += correct;
           console.log(correctcount);
+          console.log(a1chosen);
+          console.log(answer1);
 
           }
           
