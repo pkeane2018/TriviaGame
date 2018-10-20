@@ -217,6 +217,152 @@ window.onload = function game () {
 
       function trivia() {
 
+        function questions() {
+
+            var a1chosen = false;
+            var a2chosen = false;
+            var a3chosen = false;
+            var a4chosen = false;
+            var a5chosen = false;
+                
+            var wrongcount = 0;
+            var correctcount = 0;
+            
+            $(".option").on("click", function() {
+            
+              console.log("on click function started")
+              
+               var wrong;
+               var correct;
+            
+              if ($(this).hasClass("q1option") && a1chosen == false) {
+            
+                  correct = 0;
+                  wrong = 0;
+                  answer = $(this).val();
+                  a1chosen = true;
+                
+                  if (answer == "wrong") {
+                    wrong = 1;
+                    console.log("The answer was wrong");
+                }
+                  else if (answer == "correct") {
+                    correct = 1;
+                    console.log("The answer was correct");
+                    console.log(correct);
+                  }
+                  
+                      
+                      wrongcount += wrong;
+                      console.log(wrongcount);
+                      correctcount += correct;
+                      console.log(correctcount);
+            
+                      }
+                      
+            
+              if ($(this).hasClass("q2option") && a2chosen == false) {
+            
+                  correct = 0;
+                  wrong = 0;
+                  answer = $(this).val();
+                  a2chosen = true;
+                
+                  if (answer == "wrong") {
+                    wrong = 1;
+                    console.log("The answer was wrong");
+                }
+                  else if (answer == "correct") {
+                    correct = 1;
+                    console.log("The answer was correct");
+                  }
+                      
+                      wrongcount += wrong;
+                      console.log(wrongcount);
+                      correctcount += correct;
+                      console.log(correctcount);
+              
+                      }
+                      
+              if ($(this).hasClass("q3option") && a3chosen == false) {
+            
+                        correct = 0;
+                        wrong = 0;
+                        answer = $(this).val();
+                        a3chosen = true;
+                      
+                        if (answer == "wrong") {
+                          wrong = 1;
+                          console.log("The answer was wrong");
+                      }
+                        else if (answer == "correct") {
+                          correct = 1;
+                          console.log("The answer was correct");
+                        }
+                        
+                            
+                            wrongcount += wrong;
+                            console.log(wrongcount);
+                            correctcount += correct;
+                            console.log(correctcount);
+                
+                            }
+            
+            
+                if ($(this).hasClass("q4option") && a4chosen == false) {
+            
+                              correct = 0;
+                              wrong = 0;
+                              answer = $(this).val();
+                              a4chosen = true;
+                            
+                              if (answer == "wrong") {
+                                wrong = 1;
+                                console.log("The answer was wrong");
+                            }
+                              else if (answer == "correct") {
+                                correct = 1;
+                                console.log("The answer was correct");
+                                console.log(correct);
+                              }
+                              
+                                  
+                                  wrongcount += wrong;
+                                  console.log(wrongcount);
+                                  correctcount += correct;
+                                  console.log(correctcount);
+                      
+                                  }
+            
+            
+                if ($(this).hasClass("q5option") && a5chosen == false) {
+            
+                                    correct = 0;
+                                    wrong = 0;
+                                    answer = $(this).val();
+                                    a5chosen = true;
+                                  
+                                    if (answer == "wrong") {
+                                      wrong = 1;
+                                      console.log("The answer was wrong");
+                                  }
+                                    else if (answer == "correct") {
+                                      correct = 1;
+                                      console.log("The answer was correct");
+                                      console.log(correct);
+                                    }
+                                    
+                                        
+                                        wrongcount += wrong;
+                                        console.log(wrongcount);
+                                        correctcount += correct;
+                                        console.log(correctcount);
+                            
+                                        }
+                })
+            
+            }
+      
       var timeup = false;
 
       console.log(timeup);
@@ -245,176 +391,22 @@ window.onload = function game () {
         }
   
     function count() {
-
+      
         if ( time > 0) {
           time--;
-          console.log(time);
           var converted = Converter(time);
           $("#time").text(converted);
-
+            questions();
         }
       
         else if (time == 0) {
 
-          clearInterval(countdown);
+          clearInterval(count);
           console.log("DONE");
         }  
     }
-  
+     
 countdown = setInterval(count, 1000);
-
-if (time > 0) {
-
-var a1chosen = false;
-var a2chosen = false;
-var a3chosen = false;
-var a4chosen = false;
-var a5chosen = false;
-    
-var wrongcount = 0;
-var correctcount = 0;
-
-$(".option").on("click", function() {
-
-  console.log("on click function started")
-  
-   var wrong;
-   var correct;
-
-  if ($(this).hasClass("q1option") && a1chosen == false) {
-
-      correct = 0;
-      wrong = 0;
-      answer = $(this).val();
-      a1chosen = true;
-    
-      if (answer == "wrong") {
-        wrong = 1;
-        console.log("The answer was wrong");
-    }
-      else if (answer == "correct") {
-        correct = 1;
-        console.log("The answer was correct");
-        console.log(correct);
-      }
-      
-          
-          wrongcount += wrong;
-          console.log(wrongcount);
-          correctcount += correct;
-          console.log(correctcount);
-
-          }
-          
-
-  if ($(this).hasClass("q2option") && a2chosen == false) {
-
-      correct = 0;
-      wrong = 0;
-      answer = $(this).val();
-      a2chosen = true;
-    
-      if (answer == "wrong") {
-        wrong = 1;
-        console.log("The answer was wrong");
-    }
-      else if (answer == "correct") {
-        correct = 1;
-        console.log("The answer was correct");
-      }
-          
-          wrongcount += wrong;
-          console.log(wrongcount);
-          correctcount += correct;
-          console.log(correctcount);
-  
-          }
-          
-  if ($(this).hasClass("q3option") && a3chosen == false) {
-
-            correct = 0;
-            wrong = 0;
-            answer = $(this).val();
-            a3chosen = true;
-          
-            if (answer == "wrong") {
-              wrong = 1;
-              console.log("The answer was wrong");
-          }
-            else if (answer == "correct") {
-              correct = 1;
-              console.log("The answer was correct");
-            }
-            
-                
-                wrongcount += wrong;
-                console.log(wrongcount);
-                correctcount += correct;
-                console.log(correctcount);
-    
-                }
-
-
-    if ($(this).hasClass("q4option") && a4chosen == false) {
-
-                  correct = 0;
-                  wrong = 0;
-                  answer = $(this).val();
-                  a4chosen = true;
-                
-                  if (answer == "wrong") {
-                    wrong = 1;
-                    console.log("The answer was wrong");
-                }
-                  else if (answer == "correct") {
-                    correct = 1;
-                    console.log("The answer was correct");
-                    console.log(correct);
-                  }
-                  
-                      
-                      wrongcount += wrong;
-                      console.log(wrongcount);
-                      correctcount += correct;
-                      console.log(correctcount);
-          
-                      }
-
-
-    if ($(this).hasClass("q5option") && a5chosen == false) {
-
-                        correct = 0;
-                        wrong = 0;
-                        answer = $(this).val();
-                        a5chosen = true;
-                      
-                        if (answer == "wrong") {
-                          wrong = 1;
-                          console.log("The answer was wrong");
-                      }
-                        else if (answer == "correct") {
-                          correct = 1;
-                          console.log("The answer was correct");
-                          console.log(correct);
-                        }
-                        
-                            
-                            wrongcount += wrong;
-                            console.log(wrongcount);
-                            correctcount += correct;
-                            console.log(correctcount);
-                
-                            }
-  })
-  
-}   
-
-else if (time == 0) {
-
-  console.log("time's up");
-
-}
-
 
 }
 

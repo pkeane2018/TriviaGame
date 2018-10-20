@@ -245,25 +245,16 @@ window.onload = function game () {
         }
   
     function count() {
-
-        if ( time > 0) {
+        
           time--;
           console.log(time);
           var converted = Converter(time);
           $("#time").text(converted);
-
-        }
-      
-        else if (time == 0) {
-
-          clearInterval(countdown);
-          console.log("DONE");
-        }  
     }
   
-countdown = setInterval(count, 1000);
+if ( time > 0) {
 
-if (time > 0) {
+countdown = setInterval(count, 1000);
 
 var a1chosen = false;
 var a2chosen = false;
@@ -411,9 +402,10 @@ $(".option").on("click", function() {
 
 else if (time == 0) {
 
+  clearInterval(countdown);
   console.log("time's up");
 
-}
+    }
 
 
 }
