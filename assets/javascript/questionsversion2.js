@@ -134,7 +134,7 @@ window.onload = function game () {
       var q3option3 = $("<div>");
       $(q3option3).attr('class','form-check');
       $(q3option3).attr('class','form-check-inline');
-      $(q3option3).html( "<input class='form-check-input option q3option3' type='radio' name='inlineRadioOptions' id='inlineRadio3' value='correct'></input>");
+      $(q3option3).html( "<input class='form-check-input option q3option' type='radio' name='inlineRadioOptions' id='inlineRadio3' value='correct'></input>");
       $(q3option3).append("<label class='form-check-label' for='inlineRadio3'>South Carolina</label>");
       $(optionbox3).append(q3option3);
 
@@ -219,6 +219,9 @@ window.onload = function game () {
 
     var a1chosen = false;
     var a2chosen = false;
+    var a3chosen = false;
+    var a4chosen = false;
+    var a5chosen = false;
     
 var wrongcount = 0;
 var correctcount = 0;
@@ -229,7 +232,6 @@ $(".option").on("click", function() {
     
      var wrong;
      var correct;
-
 
     if ($(this).hasClass("q1option") && a1chosen == false) {
   
@@ -280,8 +282,81 @@ $(".option").on("click", function() {
     
             }
             
+    if ($(this).hasClass("q3option") && a3chosen == false) {
+  
+              correct = 0;
+              wrong = 0;
+              answer = $(this).val();
+              a3chosen = true;
             
+              if (answer == "wrong") {
+                wrong = 1;
+                console.log("The answer was wrong");
+            }
+              else if (answer == "correct") {
+                correct = 1;
+                console.log("The answer was correct");
+              }
+              
+                  
+                  wrongcount += wrong;
+                  console.log(wrongcount);
+                  correctcount += correct;
+                  console.log(correctcount);
+      
+                  }
 
+
+      if ($(this).hasClass("q4option") && a4chosen == false) {
+  
+                    correct = 0;
+                    wrong = 0;
+                    answer = $(this).val();
+                    a4chosen = true;
+                  
+                    if (answer == "wrong") {
+                      wrong = 1;
+                      console.log("The answer was wrong");
+                  }
+                    else if (answer == "correct") {
+                      correct = 1;
+                      console.log("The answer was correct");
+                      console.log(correct);
+                    }
+                    
+                        
+                        wrongcount += wrong;
+                        console.log(wrongcount);
+                        correctcount += correct;
+                        console.log(correctcount);
+            
+                        }
+
+
+      if ($(this).hasClass("q5option") && a5chosen == false) {
+  
+                          correct = 0;
+                          wrong = 0;
+                          answer = $(this).val();
+                          a5chosen = true;
+                        
+                          if (answer == "wrong") {
+                            wrong = 1;
+                            console.log("The answer was wrong");
+                        }
+                          else if (answer == "correct") {
+                            correct = 1;
+                            console.log("The answer was correct");
+                            console.log(correct);
+                          }
+                          
+                              
+                              wrongcount += wrong;
+                              console.log(wrongcount);
+                              correctcount += correct;
+                              console.log(correctcount);
+                  
+                              }
     })
 
 }
