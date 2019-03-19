@@ -1,7 +1,7 @@
 # Trivia Game
 This is a trivia game in which the user answers questions about American history. The target user for this game is anyone who is interested in American history or who enjoys testing their knowledge. 
 
-## How to run the site
+## How to run the site on local machine
 The repository can be cloned by clicking the Clone or Download button on the main repository page, then clicking the button next to the url which appears below. Then open a Terminal or Git Bash window, navigate to the location where you want to place the cloned repository, then type 'git clone' and then paste the repository that was just copied. The site can then be opened by clicking on the index.html file and opening it in a web browser.
 
 ## Repository organization
