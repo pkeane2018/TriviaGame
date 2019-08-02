@@ -1,5 +1,7 @@
 window.onload = function game() {
 
+    // var option_array = [{name: 'question_1', options : [{text: 'Barack Obama', value: 'wrong' }, { text: 'Theodore Roosevelt' , value: 'correct'}, {text: 'John F. Kennedy', value: 'wrong'}, {text: 'Abraham Lincoln', value: 'wrong'}]},  ]
+
     function makeoptions(option_class, option_id, option_name, radio_id, option_value, option_text, cb) {
         var option_div = $("<div>");
         $(option_div).attr('class', 'form-check');
