@@ -1,0 +1,283 @@
+window.onload = function game () {
+
+    $("#start").click(function() {
+     
+      $("#start").hide();
+  
+      $("#amy").append("<br><br>");
+      var tr = $("<div>").html("Time Remaining:&nbsp");
+      $(tr).attr('id','tr');
+      $("#amy").append(tr);
+      var time = $("<div>").text("01:00");
+      $(time).attr('id','time');
+      $("#amy").append(time);
+      $("#amy").append("<br><br>");
+
+      
+      var q1 = $("<div>").text("Who is the youngest president in American history?");
+      $(q1).attr('id','q1');
+      $(q1).attr('class','question');
+      $("#amy").append(q1);
+      $("#amy").append("<br>");
+      console.log("added question 1")
+
+      var optionbox1 = $("<div>");
+      $(optionbox1).attr('id','optionbox1');
+
+      var q1option1 = $("<div>");
+      $(q1option1).attr('class','form-check');
+      $(q1option1).attr('class','form-check-inline');
+      $(q1option1).attr('id' ,'option1');
+      $(q1option1).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio1' value='wrong'></input>");
+      $(q1option1).append("<label class='form-check-label' for='inlineRadio1'>Barack Obama</label>");
+      $(optionbox1).append(q1option1);
+      console.log("added question 1 option 1");
+      
+      var q1option2 = $("<div>");
+      $(q1option2).attr('class','form-check');
+      $(q1option2).attr('class','form-check-inline');
+      $(q1option2).attr('id' ,'option2');
+      $(q1option2).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio2' value='correct'></input>");
+      $(q1option2).append("<label class='form-check-label' for='inlineRadio2'>Theodore Roosevelt</label>");
+      $(optionbox1).append(q1option2);
+      console.log("added question 1 option 2");
+
+      var q1option3 = $("<div>");
+      $(q1option3).attr('class','form-check');
+      $(q1option3).attr('class','form-check-inline');
+      $(q1option3).attr('id' ,'option3');
+      $(q1option3).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio3' value='wrong'></input>");
+      $(q1option3).append("<label class='form-check-label' for='inlineRadio3'>John F. Kennedy</label>");
+      $(optionbox1).append(q1option3);
+      console.log("added question 1 option 3");
+
+      var q1option4 = $("<div>");
+      $(q1option4).attr('class','form-check');
+      $(q1option4).attr('class','form-check-inline');
+      $(q1option4).attr('id' ,'option4');
+      $(q1option4).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio4' value='wrong'></input>");
+      $(q1option4).append("<label class='form-check-label' for='inlineRadio4'>Abraham Lincoln</label>");
+      $(optionbox1).append(q1option4);
+      console.log("added question 1 option 4");
+      $("#amy").append(optionbox1);
+      console.log("appended optionbox1");
+      $("#amy").append("<br>")
+      
+      console.log("BREAK")
+
+      var q2 = $("<div>").html("Which U.S. president was <b>not<b> born in the state of Virginia?");
+      $(q2).attr('id','q2');
+      $(q2).attr('class','question');
+      $("#amy").append(q2);
+      $("#amy").append("<br>");
+      console.log("added question 2");
+      
+      var optionbox2 = $("<div>");
+      $(optionbox2).attr('id','optionbox2');
+
+      var q2option1 = $("<div>");
+      $(q2option1).empty();
+      $(q2option1).attr('class','form-check');
+      $(q2option1).attr('class','form-check-inline');
+      $(q2option1).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio1' value='correct'></input>");
+      $(q2option1).append("<label class='form-check-label' for='inlineRadio1'>John Adams</label>");
+      $(optionbox2).append(q2option1);
+      console.log("added question 2 option 1");
+      
+      var q2option2 = $("<div>");
+      $()
+      $(q2option2).attr('class','form-check');
+      $(q2option2).attr('class','form-check-inline');
+      $(q2option2).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio2' value='wrong'></input>");
+      $(q2option2).append("<label class='form-check-label' for='inlineRadio2'>Thomas Jefferson</label>");
+      $(optionbox2).append(q2option2);
+      console.log("added question 2 option 2");
+
+      var q2option3 = $("<div>");
+      $(q2option3).attr('class','form-check');
+      $(q2option3).attr('class','form-check-inline');
+      $(q2option3).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio3' value='wrong'></input>");
+      $(q2option3).append("<label class='form-check-label' for='inlineRadio3'>James Monroe</label>");
+      $(optionbox2).append(q2option3);
+      console.log("added question 2 option 3");
+
+      var q2option4 = $("<div>");
+      $(q2option4).attr('class','form-check');
+      $(q2option4).attr('class','form-check-inline');
+      $(q2option4).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio4' value='wrong'></input>");
+      $(q2option4).append("<label class='form-check-label' for='inlineRadio4'>Abraham Lincoln</label>");
+      $(optionbox2).append(q2option4);
+      console.log("added question 2 option 4");
+      $("#amy").append(optionbox2);
+      console.log("appended optionbox2");
+      $("#amy").append("<br>")
+
+      console.log("BREAK");
+
+      var q3 = $("<div>").html("What was the first state to secede from the Union before the Civil War?");
+      $(q3).attr('id','q3');
+      $(q3).attr('class','question');
+      $("#amy").append(q3);
+      $("#amy").append("<br>");
+      console.log("added question 3");
+      
+      var optionbox3 = $("<div>");
+      $(optionbox3).attr('id','optionbox3');
+
+      var q3option1 = $("<div>");
+      $(q3option1).empty();
+      $(q3option1).attr('class','form-check');
+      $(q3option1).attr('class','form-check-inline');
+      $(q3option1).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio1' value='wrong'></input>");
+      $(q3option1).append("<label class='form-check-label' for='inlineRadio1'>Texas</label>");
+      $(optionbox3).append(q3option1);
+      console.log("added question 3 option 1");
+      
+      var q3option2 = $("<div>");
+      $(q3option2).attr('class','form-check');
+      $(q3option2).attr('class','form-check-inline');
+      $(q3option2).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio2' value='wrong'></input>");
+      $(q3option2).append("<label class='form-check-label' for='inlineRadio2'>Virgina</label>");
+      $(optionbox3).append(q3option2);
+      console.log("added question 3 option 2");
+
+      var q3option3 = $("<div>");
+      $(q3option3).attr('class','form-check');
+      $(q3option3).attr('class','form-check-inline');
+      $(q3option3).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio3' value='correct'></input>");
+      $(q3option3).append("<label class='form-check-label' for='inlineRadio3'>South Carolina</label>");
+      $(optionbox3).append(q3option3);
+      console.log("added question 3 option 3");
+
+      var q3option4 = $("<div>");
+      $(q3option4).attr('class','form-check');
+      $(q3option4).attr('class','form-check-inline');
+      $(q3option4).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio4' value='wrong'></input>");
+      $(q3option4).append("<label class='form-check-label' for='inlineRadio4'>Georgia</label>");
+      $(optionbox3).append(q3option4);
+      console.log("added question 3 option 4");
+      $("#amy").append(optionbox3);
+      console.log("appended optionbox3");
+      $("#amy").append("<br>")
+
+      console.log("BREAK");
+
+      var q4 = $("<div>").html("True or False - The seventh Ammendment to the Constitution bans cruel and unusual punishment.");
+      $(q4).attr('id','q4');
+      $(q4).attr('class','question');
+      $("#amy").append(q4);
+      $("#amy").append("<br>");
+      console.log("added question 4");
+      
+      var optionbox4 = $("<div>");
+      $(optionbox4).attr('id','optionbox4');
+
+      var q4option1 = $("<div>");
+      $(q4option1).empty();
+      $(q4option1).attr('class','form-check');
+      $(q4option1).attr('class','form-check-inline');
+      $(q4option1).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio1' value='wrong'></input>");
+      $(q4option1).append("<label class='form-check-label' for='inlineRadio1'>True</label>");
+      $(optionbox4).append(q4option1);
+      console.log("added question 4 option 1");
+      
+      var q4option2 = $("<div>");
+      $(q4option2).attr('class','form-check');
+      $(q4option2).attr('class','form-check-inline');
+      $(q4option2).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio2' value='correct'></input>");
+      $(q4option2).append("<label class='form-check-label' for='inlineRadio2'>False</label>");
+      $(optionbox4).append(q4option2);
+      console.log("added question 4 option 2");
+      $("#amy").append(optionbox4);
+      console.log("appended optionbox4");
+      $("#amy").append("<br>")
+
+      console.log("BREAK");
+
+      var q5 = $("<div>").html("In what year did the American Revolutionary War end?");
+      $(q5).attr('id','q5');
+      $(q5).attr('class','question');
+      $("#amy").append(q5);
+      $("#amy").append("<br>");
+      console.log("added question 5");
+      
+      var optionbox5 = $("<div>");
+      $(optionbox5).attr('id','optionbox5');
+
+      var q5option1 = $("<div>");
+      $(q5option1).empty();
+      $(q5option1).attr('class','form-check');
+      $(q5option1).attr('class','form-check-inline');
+      $(q5option1).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio1' value='wrong'></input>");
+      $(q5option1).append("<label class='form-check-label' for='inlineRadio1'>1776</label>");
+      $(optionbox5).append(q5option1);
+      console.log("added question 5 option 1");
+      
+      var q5option2 = $("<div>");
+      $(q5option2).attr('class','form-check');
+      $(q5option2).attr('class','form-check-inline');
+      $(q5option2).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio2' value='wrong'></input>");
+      $(q5option2).append("<label class='form-check-label' for='inlineRadio2'>1779</label>");
+      $(optionbox5).append(q5option2);
+      console.log("added question 5 option 2");
+
+      var q5option3 = $("<div>");
+      $(q5option3).attr('class','form-check');
+      $(q5option3).attr('class','form-check-inline');
+      $(q5option3).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio3' value='correct'></input>");
+      $(q5option3).append("<label class='form-check-label' for='inlineRadio3'>1782</label>");
+      $(optionbox5).append(q5option3);
+      console.log("added question 5 option 3");
+
+      var q5option4 = $("<div>");
+      $(q5option4).attr('class','form-check');
+      $(q5option4).attr('class','form-check-inline');
+      $(q5option4).html( "<input class='form-check-input option' type='radio' name='inlineRadioOptions' id='inlineRadio4' value='wrong'></input>");
+      $(q5option4).append("<label class='form-check-label' for='inlineRadio4'>1783</label>");
+      $(optionbox5).append(q5option4);
+      console.log("added question 5 option 4");
+      $("#amy").append(optionbox5);
+      console.log("appended optionbox5");
+      $("#amy").append("<br>")
+
+      var countdown;
+
+      var clock = {
+  
+      time : 60,
+  
+      Converter: function(t) {
+  
+          var minutes = Math.floor(t / 60);
+          var seconds = t - (minutes * 60);
+      
+          if (seconds < 10) {
+            seconds = "0" + seconds;
+          }
+      
+          if (minutes === 0) {
+            minutes = "00";
+          }
+          else if (minutes < 10) {
+            minutes = "0" + minutes;
+          }
+      
+          return minutes + ":" + seconds;
+        },
+  
+      count: function() {
+      
+          clock.time--;
+          console.log(clock.time);
+          var converted = clock.Converter(clock.time);
+          $("#time").text(converted);
+      }
+     
+     }
+  
+      countdown = setInterval(clock.count, 1000);
+
+    })
+   
+
+}
