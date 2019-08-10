@@ -1,15 +1,23 @@
 window.onload = function game() {
 
-    var option_array = [
-        {name: 'question_1', 
-        question_text: "Who is the youngest president in American history?",
-        option_class: 'q1option',
-        radio_name: 'inlineRadioOptions',
-        options : [{option_text: 'Barack Obama', value: 'wrong', radio_id: 'inlineRadio1' }, {option_text: 'Theodore Roosevelt' , value: 'correct', radio_id: 'inlineRadio2'}, {option_text: 'John F. Kennedy', value: 'wrong', radio_id: 'inlineRadio3'}, {option_text: 'Abraham Lincoln', value: 'wrong',radio_id: 'inlineRadio1'}]
-    },  
+    var question_array = [
+        {
+            name: 'question_1',
+            question_text: "Who is the youngest president in American history?",
+            option_class: 'q1option',
+            radio_name: 'inlineRadioOptions',
+            options: [{ option_text: 'Barack Obama', value: 'wrong', radio_id: 'inlineRadio1' }, { option_text: 'Theodore Roosevelt', value: 'correct', radio_id: 'inlineRadio2' }, { option_text: 'John F. Kennedy', value: 'wrong', radio_id: 'inlineRadio3' }, { option_text: 'Abraham Lincoln', value: 'wrong', radio_id: 'inlineRadio4' }]
+        },
+        {
+            name: 'question_2',
+            question_text: "Which U.S. president was not born in the state of Virginia?",
+            option_class: 'q2option',
+            radio_name: 'inlineRadioOptions2',
+            options: [{ option_text: 'John Adams', value: 'correct', radio_id: 'inlineRadio1' }, { option_text: 'Thomas Jefferson', value: 'wrong', radio_id: 'inlineRadio2' }, { option_text: 'James Monroe', value: 'wrong', radio_id: 'inlineRadio3' }, { option_text: 'Woodrow Wilson', value: 'wrong', radio_id: 'inlineRadio4' }],
+        }
     ]
 
-    //after looking at the last version of app.js, it seems that adding an option id, e.g. option is not necessary, so I won't include it here, may change that later if it seems to affect functionality
+    //after looking at the last version of app.js, it seems that adding an option id, e.g. option1 is not necessary, so I won't include it here, may change that later if it seems to affect functionality
 
     // function makeoptions(option_class, option_id, option_name, radio_id, option_value, option_text, cb) {
 
@@ -37,7 +45,9 @@ window.onload = function game() {
             $(questiondiv).attr('id', j);
             console.log(j);
             $(questiondiv).attr('class', 'question');
-            addtoamy(questiondiv);
+            // addtoamy(questiondiv);
+            $("#amy").append(questiondiv);
+            $("#amy").append("<br>");
 
             var optionbox = $("<div>");
             var x = i + 1;
@@ -74,7 +84,7 @@ window.onload = function game() {
 
             // makeoptions('q1option', 'inlineRadioOptions', 'inlineRadio1', 'wrong', 'Barack Obama', addtoamy);
 
-            makeoptions(option_array, addtoamy);
+            makeoptions(question_array, addtoamy);
 
             // var q1 = $("<div>").text("Who is the youngest president in American history?");
             // $(q1).attr('id', 'q1');
