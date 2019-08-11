@@ -14,8 +14,32 @@ window.onload = function game() {
             option_class: 'q2option',
             radio_name: 'inlineRadioOptions2',
             options: [{ option_text: 'John Adams', value: 'correct', radio_id: 'inlineRadio1' }, { option_text: 'Thomas Jefferson', value: 'wrong', radio_id: 'inlineRadio2' }, { option_text: 'James Monroe', value: 'wrong', radio_id: 'inlineRadio3' }, { option_text: 'Woodrow Wilson', value: 'wrong', radio_id: 'inlineRadio4' }],
-        }
-    ]
+        },
+
+        {
+            name: 'question_3',
+            question_text: "What was the first state to secede from the Union before the Civil War?",
+            option_class: 'q3option',
+            radio_name: 'inlineRadioOptions3',
+            options: [{option_text: 'Texas', value: 'wrong', radio_id: 'inlineRadio1'}, {option_text: 'Virgina', value: 'wrong', radio_id: 'inlineRadio2'}, {option_text: 'South Carolina', value: 'correct', radio_id: 'inlineRadio3' }, {option_text: 'Georgia', value: 'wrong', radio_id:'inlineRadio4'}],
+        },
+
+        {
+            name: 'question_4',
+            question_text: "True or False - The seventh Ammendment to the Constitution bans cruel and unusual punishment.",
+            option_class: 'q4option',
+            radio_name: 'inlineRadioOptions4',
+            options: [{option_text: 'True', value: 'wrong', radio_id: 'inlineRadio1'}, {option_text: 'False', value: 'right', radio_id: 'inlineRadio2' }],
+        },
+
+        {
+            name: 'question_5',
+            question_text: "In what year did the American Revolutionary War end?",
+            option_class: 'q5option',
+            radio_name: 'inlineRadioOptions5',
+            options: [{option_text: '1776', value: 'wrong', radio_id: 'inlineRadio1'}, {option_text: '1779', value: 'wrong', radio_id:'inlineRadio2'}, {option_text: '1782', value: 'wrong', radio_id: 'inlineRadio3'}, {option_text: '1783', value: 'correct', radio_id:'inlineRadio4'}],
+        },
+    ];
 
     //after looking at the last version of app.js, it seems that adding an option id, e.g. option1 is not necessary, so I won't include it here, may change that later if it seems to affect functionality
 
