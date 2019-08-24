@@ -44,17 +44,21 @@ window.onload = function game () {
 function makeoptions(array_name, cb) {
 
   for (i = 0; i < array_name.length; i++) {
-      var questiondiv = $("<div>");
-      $(questiondiv).text(array_name[i].question_text);
-      console.log($(questiondiv).text());
+      var question_div = $("<div>");
+      var question_text = $("<p>");
+      $(question_text).text(array_name[i].question_text);
+     
+      console.log($(question_text).text());
+
       var j = i + 1;
       j = j.toString();
       j = 'q' + j;
-      $(questiondiv).attr('id', j);
+      $(question_text).attr('id', j);
       console.log(j);
-      $(questiondiv).attr('class', 'question');
-      $("#amy").append(questiondiv);
-      $("#amy").append("<br>");
+      $(question_text).attr('class', 'question');
+      // addtodiv(question_div, question_text);
+      $(question_div).append(question_text);
+      // $(question_div).append("<br>");
 
       var optionbox = $("<div>");
       var x = i + 1;
@@ -71,14 +75,15 @@ function makeoptions(array_name, cb) {
           $(optionbox).append(option_div);
       };
 
-      cb(optionbox);
+      $(question_div).append(optionbox);
+      cb($("#amy"), question_div);
   };
 
 };
 
-function addtoamy(thing) {
-  $("#amy").append(thing);
-  $("#amy").append("<br><br>");
+function addtodiv(parent_div, child_div) {
+  $(parent_div).append(child_div);
+  $(parent_div).append("<br>");
 };
 
     $("#start").click(function() {
@@ -94,9 +99,11 @@ function addtoamy(thing) {
       $("#amy").append(time);
       $("#amy").append("<br><br>");
 
-      makeoptions(question_array, addtoamy);
+      makeoptions(question_array, addtodiv);
 
   function trivia() {
+
+    $(".question").attr("data-answered", false);
 
     var wrongcount = 0;
     var correctcount = 0;
@@ -291,7 +298,6 @@ var answer2;
 var answer3;
 var answer4;
 var answer5;
-
 
 $(".option").on("click", function() {
 
