@@ -45,6 +45,7 @@ function makeoptions(array_name, cb) {
 
   for (i = 0; i < array_name.length; i++) {
       var question_div = $("<div>");
+      $(question_div).attr('class', 'question-div');
       var question_text = $("<p>");
       $(question_text).text(array_name[i].question_text);
      
