@@ -106,8 +106,59 @@ window.onload = function game() {
             trivia();
 
             function trivia() {
+
+                var wrongcount = 0;
+                var correctcount = 0;
+                var uacount = 0;
+                var answer;
+
+                function checkanswer(answer_param) {
+
+                    console.log("The answer is " + answer_param);
+
+                    if (answer_param === "wrong") {
+                        
+                        wrongcount++;
+                        console.log("There are " + correctcount + " correct answers.")
+                        console.log("There are " + wrongcount + " wrong answers.")
+                    }
+
+                    else if (answer_param === "correct") {
+                        correctcount ++;
+                        console.log("There are " + correctcount + " correct answers.");
+                        console.log("There are " + wrongcount + " wrong answers.")
+                    }
+
+                    console.log("\n");
+                }
+
                 $(".option").on("click", function () {
-                    console.log($(this).parent().parent().parent().attr("data-answered"));
+
+                    var question = $(this).parent().parent().parent();
+                    console.log("Has the question already been answered? " + (question.attr("data-answered")));
+                    console.log("The answer is " + answer);
+
+                    if ((question.attr("data-answered")) === "false") {
+                        answer = $(this).val();
+                        console.log("HOOCHY MAMA!");
+                    }
+
+                    else if (((question.attr("data-answered")) === "true") && answer === "correct" ) {
+                        correctcount--;
+                        console.log(correctcount);
+                    }
+
+                    else if (((question.attr("data-answered")) === "true") && answer === "wrong") {
+                        wrongcount--;
+                        console.log(wrongcount);
+                    }
+
+                    $(this).parent().parent().parent().attr("data-answered", true);
+                    console.log("Has the question been answered? " + (question.attr("data-answered")));
+                    answer = $(this).val();
+                    // console.log("The answer is " + answer);
+
+                    checkanswer(answer);
                 });
             }
         })

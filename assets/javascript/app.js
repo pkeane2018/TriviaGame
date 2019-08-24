@@ -116,7 +116,6 @@ function addtodiv(parent_div, child_div) {
     var a4blank = 0;
     var a5blank = 0;
 
-
     var a1answered = false;
     var a2answered = false;
     var a3answered = false;
