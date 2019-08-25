@@ -109,7 +109,7 @@ window.onload = function game() {
 
                 var wrongcount = 0;
                 var correctcount = 0;
-                var uacount = 0;
+                // var uacount = 0;
                 var answer;
 
                 function checkanswer(answer_param) {
@@ -132,37 +132,117 @@ window.onload = function game() {
                     console.log("\n");
                 }
 
-                $(".option").on("click", function () {
+                var countdown;
+                var time = 20;
 
-                    var question = $(this).parent().parent().parent();
-                    console.log("Has the question already been answered? " + (question.attr("data-answered")));
-                    console.log("The answer is " + answer);
+                function Converter(t) {
+  
+                    var minutes = Math.floor(t / 60);
+                    var seconds = t - (minutes * 60);
+                
+                    if (seconds < 10) {
+                      seconds = "0" + seconds;
+                    }
+                
+                    if (minutes === 0) {
+                      minutes = "00";
+                    }
+                    else if (minutes < 10) {
+                      minutes = "0" + minutes;
+                    }
+                
+                    return minutes + ":" + seconds;
+                  }
 
-                    if ((question.attr("data-answered")) === "false") {
+                  function count() {
+
+                    if ( time > 0) {
+                        time--;
+                        var converted = Converter(time);
+
+                        $("#time").text(converted);
+
+                      }
+
+                      else if (time === 0) {
+                        clearInterval(countdown);
+                        console.log("DONE");
+
+                    var uacount = $("#amy div").filter(function() {
+                        return ($(this).attr("data-answered") === "false");
+                    }).length;
+
+                    console.log("There were " + uacount + " unanswered questions.");
+
+                    $("#tr").hide();
+                    $("#time").hide();
+                    $(".question-div").hide();
+                    $("br").hide();
+
+                    console.log("The question page elements are gone.")
+                    $("#amy").append("<br><br>");
+                    var gameover = $("<p>").text("Game over");
+                    $(gameover).attr('id','gameover');
+                    $("#amy").append(gameover);
+                    $("#amy").append("<br>");
+                    var correctans = $("<p>").html("Correct Answers:&nbsp;");
+                    $(correctans).attr('id', 'correctans');
+                    $("#amy").append(correctans);
+                    var correctnum = $("<p>").html(correctcount);
+                    $(correctnum).attr('id','correctnum');
+                    $("#amy").append(correctnum);
+                    $("#amy").append("<br>");
+                    var incorrectans = $("<p>").html("Incorrect Answers:&nbsp;");
+                    $(incorrectans).attr('id','incorrectans');
+                    $("#amy").append(incorrectans);
+                    var incorrectnum = $("<p>").html(wrongcount);
+                    $(incorrectnum).attr('id','incorrectnum');
+                    $("#amy").append(incorrectnum);
+                    $("#amy").append("<br>");
+                    var unanswered = $("<p>").html("Unanswered Questions:&nbsp;");
+                    $(unanswered).attr('id','unanswered');
+                    $("#amy").append(unanswered); 
+                    var uanum = $("<p>").html(uacount);
+                    $(uanum).attr('id', 'uanum');
+                    $("#amy").append(uanum);  
+
+                    }
+                   
+                  }
+
+                  countdown = setInterval(count, 1000);
+
+                  if (time > 0) {
+                    $(".option").on("click", function () {
+
+                        var question = $(this).parent().parent().parent();
+                        console.log("Has the question already been answered? " + (question.attr("data-answered")));
+                        console.log("The answer is " + answer);
+    
+                        if ((question.attr("data-answered")) === "false") {
+                            answer = $(this).val();
+                            console.log("HOOCHY MAMA!");
+                        }
+    
+                        else if (((question.attr("data-answered")) === "true") && answer === "correct" ) {
+                            correctcount--;
+                            console.log(correctcount);
+                        }
+    
+                        else if (((question.attr("data-answered")) === "true") && answer === "wrong") {
+                            wrongcount--;
+                            console.log(wrongcount);
+                        }
+    
+                        $(this).parent().parent().parent().attr("data-answered", true);
+                        console.log("Has the question been answered? " + (question.attr("data-answered")));
                         answer = $(this).val();
-                        console.log("HOOCHY MAMA!");
-                    }
-
-                    else if (((question.attr("data-answered")) === "true") && answer === "correct" ) {
-                        correctcount--;
-                        console.log(correctcount);
-                    }
-
-                    else if (((question.attr("data-answered")) === "true") && answer === "wrong") {
-                        wrongcount--;
-                        console.log(wrongcount);
-                    }
-
-                    $(this).parent().parent().parent().attr("data-answered", true);
-                    console.log("Has the question been answered? " + (question.attr("data-answered")));
-                    answer = $(this).val();
-                    // console.log("The answer is " + answer);
-
-                    checkanswer(answer);
-                });
+                        // console.log("The answer is " + answer);
+    
+                        checkanswer(answer);
+                    });
+                  }
             }
         })
-
     })
-
 }
