@@ -25,7 +25,7 @@ After the start button is pressed, a function is executed which hides the start 
 * jQuery
 
 ## Future improvements
-The app.js file could be much shorter, and functions could be created to reuse on each question, such as for keeping track of unanswered, incorrect, and correct responses, with far fewer lines of code. 
+Changes could be made to the UI to make the site more responsive on screens of different sizes. 
 
 ## Link to deployed site
 https://pkeane2018.github.io/TriviaGame/
